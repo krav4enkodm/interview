@@ -18,6 +18,35 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## API Endpoints
+
+This project includes a simple interview API implemented with Next.js route handlers.
+
+- `GET /api/v1/health`
+- `GET /api/v1/customers`
+- `GET /api/v1/customers/{customerId}`
+- `GET /api/v1/vehicles`
+- `GET /api/v1/vehicles/{vehicleId}`
+- `GET /api/v1/repair-orders`
+- `GET /api/v1/repair-orders/{roId}`
+- `GET /api/v1/dashboard/kpis`
+
+OpenAPI schema:
+
+- `GET /api/openapi.json` (alias: `/api/openapi`)
+
+Schema generation approach:
+
+- Resource contracts are defined in Zod at `lib/api-schemas.ts`
+- Routes are registered with `@asteasolutions/zod-to-openapi` in `lib/openapi.ts`
+- Full OpenAPI document (`paths` + `components`) is generated from registry definitions
+
+Generate TypeScript types:
+
+```bash
+npx openapi-typescript http://localhost:3000/api/openapi.json -o src/api.types.ts
+```
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
