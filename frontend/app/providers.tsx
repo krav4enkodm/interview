@@ -8,6 +8,17 @@ type Props = {
 }
 
 export function Providers({ children }: Props) {
-  const [queryClient] = useState(() => new QueryClient())
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60_000,
+            gcTime: 10 * 60_000,
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
+  )
   return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 }
