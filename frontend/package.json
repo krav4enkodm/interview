@@ -11,7 +11,8 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint:staged": "lint-staged",
-    "gen:api-types": "openapi-typescript http://localhost:3000/api/openapi.json -o lib/api.types.ts"
+    "gen:openapi": "tsx scripts/generate-openapi.ts",
+    "gen:api-types": "pnpm gen:openapi && openapi-typescript openapi.json -o lib/api.types.ts"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^8.4.1",
@@ -35,6 +36,7 @@
     "openapi-typescript": "^7.13.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^4.0.18"
   },

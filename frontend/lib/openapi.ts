@@ -10,7 +10,7 @@ import {
   repairOrderSchema,
   vehicleIdParamsSchema,
   vehicleSchema,
-} from '@/lib/api-schemas'
+} from './api-schemas'
 
 const registry = new OpenAPIRegistry()
 
