@@ -98,6 +98,22 @@ Conventions:
 - Place tests next to source files with the suffix `*.test.ts` or `*.test.tsx`
 - Focus on behavior over implementation details
 
+## Storybook
+
+This project uses Storybook to preview components in the `components/` folder.
+
+Run Storybook:
+
+```bash
+pnpm storybook
+```
+
+Build static Storybook:
+
+```bash
+pnpm storybook:build
+```
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
