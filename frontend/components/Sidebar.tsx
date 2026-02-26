@@ -53,8 +53,8 @@ export function Sidebar() {
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                 isActive
-                  ? 'border-l-2 border-brand bg-slate-800 pl-[10px] text-white [&_svg]:text-brand'
-                  : 'border-l-2 border-transparent pl-[10px] hover:bg-slate-800/60 hover:text-slate-100',
+                  ? 'border-l-2 border-brand bg-slate-800 pl-2.5 text-white [&_svg]:text-brand'
+                  : 'border-l-2 border-transparent pl-2.5 hover:bg-slate-800/60 hover:text-slate-100',
               )}
             >
               {item.icon}
