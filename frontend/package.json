@@ -7,11 +7,15 @@
     "build": "next build",
     "start": "next start",
     "tsc": "tsc",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:api-types": "openapi-typescript http://localhost:3000/api/openapi.json -o lib/api.types.ts"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^8.4.1",
+    "@tanstack/react-query": "^5.90.21",
     "next": "16.1.6",
+    "openapi-fetch": "^0.17.0",
+    "openapi-react-query": "^0.5.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "zod": "^4.3.6"
@@ -23,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "openapi-typescript": "^7.13.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.0.18"

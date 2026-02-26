@@ -44,8 +44,18 @@ Schema generation approach:
 Generate TypeScript types:
 
 ```bash
-npx openapi-typescript http://localhost:3000/api/openapi.json -o src/api.types.ts
+npx openapi-typescript http://localhost:3000/api/openapi.json -o lib/api.types.ts
 ```
+
+Generated types location in this repo:
+
+- `lib/api.types.ts`
+
+Typed fetch client setup:
+
+- `lib/api-client.ts` creates `openapi-fetch` + `openapi-react-query` client
+- `app/providers.tsx` registers `QueryClientProvider`
+- `app/customers-panel.tsx` shows typed query usage (`$api.useQuery("get", "/api/v1/customers")`)
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

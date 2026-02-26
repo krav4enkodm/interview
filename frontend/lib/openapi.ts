@@ -1,4 +1,7 @@
-import { OpenApiGeneratorV3, OpenAPIRegistry } from "@asteasolutions/zod-to-openapi";
+import {
+  OpenApiGeneratorV3,
+  OpenAPIRegistry,
+} from "@asteasolutions/zod-to-openapi";
 import { z } from "zod";
 import {
   customerIdParamsSchema,
@@ -14,13 +17,6 @@ import {
 
 const registry = new OpenAPIRegistry();
 
-const healthResponseSchema = registry.register("Health", healthSchema);
-const customerResponseSchema = registry.register("Customer", customerSchema);
-const vehicleResponseSchema = registry.register("Vehicle", vehicleSchema);
-const repairOrderResponseSchema = registry.register("RepairOrder", repairOrderSchema);
-const dashboardKpisResponseSchema = registry.register("DashboardKpis", dashboardKpisSchema);
-const notFoundResponseSchema = registry.register("NotFound", notFoundSchema);
-
 registry.registerPath({
   method: "get",
   path: "/api/v1/health",
@@ -29,7 +25,7 @@ registry.registerPath({
     200: {
       description: "Service status",
       content: {
-        "application/json": { schema: healthResponseSchema },
+        "application/json": { schema: healthSchema },
       },
     },
   },
@@ -43,7 +39,7 @@ registry.registerPath({
     200: {
       description: "Customers",
       content: {
-        "application/json": { schema: z.array(customerResponseSchema) },
+        "application/json": { schema: z.array(customerSchema) },
       },
     },
   },
@@ -58,13 +54,13 @@ registry.registerPath({
     200: {
       description: "Customer",
       content: {
-        "application/json": { schema: customerResponseSchema },
+        "application/json": { schema: customerSchema },
       },
     },
     404: {
       description: "Not found",
       content: {
-        "application/json": { schema: notFoundResponseSchema },
+        "application/json": { schema: notFoundSchema },
       },
     },
   },
@@ -78,7 +74,7 @@ registry.registerPath({
     200: {
       description: "Vehicles",
       content: {
-        "application/json": { schema: z.array(vehicleResponseSchema) },
+        "application/json": { schema: z.array(vehicleSchema) },
       },
     },
   },
@@ -93,13 +89,13 @@ registry.registerPath({
     200: {
       description: "Vehicle",
       content: {
-        "application/json": { schema: vehicleResponseSchema },
+        "application/json": { schema: vehicleSchema },
       },
     },
     404: {
       description: "Not found",
       content: {
-        "application/json": { schema: notFoundResponseSchema },
+        "application/json": { schema: notFoundSchema },
       },
     },
   },
@@ -113,7 +109,7 @@ registry.registerPath({
     200: {
       description: "Repair orders",
       content: {
-        "application/json": { schema: z.array(repairOrderResponseSchema) },
+        "application/json": { schema: z.array(repairOrderSchema) },
       },
     },
   },
@@ -128,13 +124,13 @@ registry.registerPath({
     200: {
       description: "Repair order",
       content: {
-        "application/json": { schema: repairOrderResponseSchema },
+        "application/json": { schema: repairOrderSchema },
       },
     },
     404: {
       description: "Not found",
       content: {
-        "application/json": { schema: notFoundResponseSchema },
+        "application/json": { schema: notFoundSchema },
       },
     },
   },
@@ -148,7 +144,7 @@ registry.registerPath({
     200: {
       description: "KPIs",
       content: {
-        "application/json": { schema: dashboardKpisResponseSchema },
+        "application/json": { schema: dashboardKpisSchema },
       },
     },
   },
