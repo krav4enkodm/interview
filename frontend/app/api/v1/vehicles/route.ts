@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
-import { vehicles } from "@/lib/api-data";
+import { NextResponse } from 'next/server'
+import { vehicles } from '@/lib/api-data'
 
 export async function GET() {
-  return NextResponse.json(vehicles);
+  return NextResponse.json(vehicles)
 }

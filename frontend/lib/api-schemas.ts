@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod'
 
 export const customerSchema = z
   .object({
@@ -7,7 +7,7 @@ export const customerSchema = z
     phone: z.string(),
     email: z.email(),
   })
-  .meta({ id: "Customer" });
+  .meta({ id: 'Customer' })
 
 export const vehicleSchema = z
   .object({
@@ -19,14 +19,9 @@ export const vehicleSchema = z
     vin: z.string(),
     mileage: z.number().int(),
   })
-  .meta({ id: "Vehicle" });
+  .meta({ id: 'Vehicle' })
 
-export const repairOrderStatusSchema = z.enum([
-  "new",
-  "in_progress",
-  "waiting_parts",
-  "completed",
-]);
+export const repairOrderStatusSchema = z.enum(['new', 'in_progress', 'waiting_parts', 'completed'])
 
 export const repairOrderSchema = z
   .object({
@@ -39,7 +34,7 @@ export const repairOrderSchema = z
     tax: z.number(),
     grandTotal: z.number(),
   })
-  .meta({ id: "RepairOrder" });
+  .meta({ id: 'RepairOrder' })
 
 export const dashboardKpisSchema = z
   .object({
@@ -48,28 +43,28 @@ export const dashboardKpisSchema = z
     averageRO: z.number(),
     openROs: z.number().int(),
   })
-  .meta({ id: "DashboardKpis" });
+  .meta({ id: 'DashboardKpis' })
 
 export const healthSchema = z
   .object({
-    status: z.literal("ok"),
+    status: z.literal('ok'),
   })
-  .meta({ id: "Health" });
+  .meta({ id: 'Health' })
 
 export const notFoundSchema = z
   .object({
     message: z.string(),
   })
-  .meta({ id: "NotFound" });
+  .meta({ id: 'NotFound' })
 
 export const customerIdParamsSchema = z.object({
   customerId: z.string(),
-});
+})
 
 export const vehicleIdParamsSchema = z.object({
   vehicleId: z.string(),
-});
+})
 
 export const repairOrderIdParamsSchema = z.object({
   roId: z.string(),
-});
+})

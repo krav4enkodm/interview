@@ -8,6 +8,9 @@
     "start": "next start",
     "tsc": "tsc",
     "lint": "eslint",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "lint:staged": "lint-staged",
     "gen:api-types": "openapi-typescript http://localhost:3000/api/openapi.json -o lib/api.types.ts"
   },
   "dependencies": {
@@ -27,9 +30,20 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "openapi-typescript": "^7.13.0",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.0.18"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,css,md,json,yml,yaml}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "eslint --fix"
+    ]
   }
 }

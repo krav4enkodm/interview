@@ -1,21 +1,20 @@
-import { NextResponse } from "next/server";
-import { repairOrders } from "@/lib/api-data";
-import { notFoundSchema, repairOrderIdParamsSchema } from "@/lib/api-schemas";
+import { NextResponse } from 'next/server'
+import { repairOrders } from '@/lib/api-data'
+import { notFoundSchema, repairOrderIdParamsSchema } from '@/lib/api-schemas'
 
 type RouteContext = {
-  params: Promise<{ roId: string }>;
-};
+  params: Promise<{ roId: string }>
+}
 
 export async function GET(_: Request, context: RouteContext) {
-  const { roId } = repairOrderIdParamsSchema.parse(await context.params);
-  const repairOrder = repairOrders.find((item) => item.id === roId);
+  const { roId } = repairOrderIdParamsSchema.parse(await context.params)
+  const repairOrder = repairOrders.find((item) => item.id === roId)
 
   if (!repairOrder) {
-    return NextResponse.json(
-      notFoundSchema.parse({ message: "Repair order not found" }),
-      { status: 404 },
-    );
+    return NextResponse.json(notFoundSchema.parse({ message: 'Repair order not found' }), {
+      status: 404,
+    })
   }
 
-  return NextResponse.json(repairOrder);
+  return NextResponse.json(repairOrder)
 }

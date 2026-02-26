@@ -57,6 +57,14 @@ Typed fetch client setup:
 - `app/providers.tsx` registers `QueryClientProvider`
 - `app/customers-panel.tsx` shows typed query usage (`$api.useQuery("get", "/api/v1/customers")`)
 
+## Formatting And Hooks
+
+- Prettier config: `.prettierrc.json`
+- Prettier ignore list: `.prettierignore`
+- Format all files: `npm run format`
+- Check formatting: `npm run format:check`
+- Pre-commit hook: `../.husky/pre-commit` runs `npm run lint:staged`
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
