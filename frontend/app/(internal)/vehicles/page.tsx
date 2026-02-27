@@ -1,8 +1,8 @@
 'use client'
 
-import { $api } from '@/lib/api-client'
-import { PageTitle } from '@/components/ui/PageTitle'
-import { Table } from '@/components/ui/Table'
+import { $api } from '@/lib/api/client/api-client'
+import { PageTitle } from '@/components/PageTitle/PageTitle'
+import { Table } from '@/ui/Table/Table'
 
 const columns = [
   { key: 'vehicle', label: 'Year / Make / Model' },

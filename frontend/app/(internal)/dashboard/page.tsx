@@ -1,10 +1,10 @@
 'use client'
 
-import { $api } from '@/lib/api-client'
-import { KpiCard } from '@/components/ui/KpiCard'
-import { PageTitle } from '@/components/ui/PageTitle'
+import { $api } from '@/lib/api/client/api-client'
+import { KpiCard } from '@/components/KpiCard/KpiCard'
+import { PageTitle } from '@/components/PageTitle/PageTitle'
 import { BarChart3, Car, CircleDollarSign, Wrench } from 'lucide-react'
-import { formatUSD } from '@/lib/formatters'
+import { formatUSD } from '@/lib/format/currency'
 
 function SkeletonCard() {
   return (

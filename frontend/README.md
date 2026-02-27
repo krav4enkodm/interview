@@ -37,8 +37,8 @@ OpenAPI schema:
 
 Schema generation approach:
 
-- Resource contracts are defined in Zod at `lib/api-schemas.ts`
-- Routes are registered with `@asteasolutions/zod-to-openapi` in `lib/openapi.ts`
+- Resource contracts are defined in Zod at `lib/api/contracts/schemas.ts`
+- Routes are registered with `@asteasolutions/zod-to-openapi` in `lib/api/contracts/openapi.ts`
 - Full OpenAPI document (`paths` + `components`) is generated from registry definitions
 
 Generate OpenAPI JSON from Zod:
@@ -55,13 +55,13 @@ npm run gen:api-types
 
 Generated types location in this repo:
 
-- `lib/api.types.ts`
+- `lib/api/contracts/generated/api.types.ts`
 
 Typed fetch client setup:
 
-- `lib/api-client.ts` creates `openapi-fetch` + `openapi-react-query` client
+- `lib/api/client/api-client.ts` creates `openapi-fetch` + `openapi-react-query` client
 - `app/providers.tsx` registers `QueryClientProvider`
-- API types are generated into `lib/api.types.ts` and consumed by `lib/api-client.ts`
+- API types are generated into `lib/api/contracts/generated/api.types.ts` and consumed by `lib/api/client/api-client.ts`
 
 ## Formatting And Hooks
 

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { LayoutDashboard } from 'lucide-react'
-import { BrandMark } from '@/components/branding/BrandMark'
-import { StatusBadge } from '@/components/StatusBadge'
-import { cn } from '@/lib/cn'
-import { features, mockKpis, mockOrders, navItems } from '@/lib/home-page-mocks'
+import { BrandMark } from '@/components/BrandMark/BrandMark'
+import { StatusBadge } from '@/components/StatusBadge/StatusBadge'
+import { cn } from '@/lib/classnames/cn'
+import { features, mockKpis, mockOrders, navItems } from '@/lib/mocks/home-page/home-page-mocks'
 
 export default function Home() {
   return (

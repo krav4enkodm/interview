@@ -17,7 +17,7 @@
     "format:check": "prettier . --check",
     "lint:staged": "lint-staged",
     "gen:openapi": "tsx scripts/generate-openapi.ts",
-    "gen:api-types": "pnpm gen:openapi && openapi-typescript openapi.json -o lib/api.types.ts"
+    "gen:api-types": "pnpm gen:openapi && openapi-typescript openapi.json -o lib/api/contracts/generated/api.types.ts"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^8.4.1",

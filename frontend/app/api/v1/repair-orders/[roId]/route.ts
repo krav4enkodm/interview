@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { repairOrders } from '@/lib/api-data'
-import { notFoundSchema, repairOrderIdParamsSchema } from '@/lib/api-schemas'
+import { repairOrders } from '@/lib/api/mock/data'
+import { notFoundSchema, repairOrderIdParamsSchema } from '@/lib/api/contracts/schemas'
 
 type RouteContext = {
   params: Promise<{ roId: string }>

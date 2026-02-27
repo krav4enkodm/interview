@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { vehicles } from '@/lib/api-data'
-import { notFoundSchema, vehicleIdParamsSchema } from '@/lib/api-schemas'
+import { vehicles } from '@/lib/api/mock/data'
+import { notFoundSchema, vehicleIdParamsSchema } from '@/lib/api/contracts/schemas'
 
 type RouteContext = {
   params: Promise<{ vehicleId: string }>
