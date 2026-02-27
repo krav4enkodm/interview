@@ -1,5 +1,5 @@
 import { CircleCheckBig, Clock3 } from 'lucide-react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { KpiCard } from '@/components/ui/KpiCard'
 
 const meta = {

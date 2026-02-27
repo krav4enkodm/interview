@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { StatusBadge } from '@/components/StatusBadge'
 import { Table } from '@/components/ui/Table'
 
@@ -17,12 +17,11 @@ const rows = [
 
 const meta = {
   title: 'Components/UI/Table',
-  component: Table.Root,
-} satisfies Meta<typeof Table.Root>
+} satisfies Meta
 
 export default meta
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj
 
 export const Default: Story = {
   render: () => (
